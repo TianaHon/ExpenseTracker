@@ -4,8 +4,8 @@ import datetime
 
 # Import the ‘os’ module and clear the screen
 def clear_screen():
-    time.sleep(2)
-    os.system('cls') #Windows
+    time.sleep(2) # wait 2s to clear screen
+    os.system('cls' if os.name == 'nt' else 'clear') # for Windows and iOS
 
 def validate_date(date_str):
     try:
