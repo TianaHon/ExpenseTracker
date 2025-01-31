@@ -1,5 +1,3 @@
-# ExpenseTrackerCollabProject
-
 import os
 import time
 import datetime
@@ -43,5 +41,4 @@ def add_expense(expenses):
         return
     expenses.append({"category": category, "amount": amount, "date": date_str})
     print("Expenses added.")
-
 
