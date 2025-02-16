@@ -127,7 +127,7 @@ def main():
     if action == "c":
         expenses = load_expenses()  # Load expenses before calculation
         total = calculate_total_expenses(expenses)
-        print("Total expenses: ${:.2f}".format(total))
+        print("Total expenses: ${:.2f}".format(total)) # print total expense with 2 decimal places
         clear_screen()
     if action == "d":
         expenses = load_expenses()
