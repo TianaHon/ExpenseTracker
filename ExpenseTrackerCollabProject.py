@@ -120,8 +120,7 @@ def main():
     if action =="b":
         expenses = load_expenses()
         print("Expense List:")
-        for expense in expenses:
-            print(f"Category: {expense['category']}, Amount: {expense['amount']}, Date: {expense['date']}")
+        view_expenses(expenses)
         print("\nScreen will clear in 5 seconds.")
         time.sleep(5)
         clear_screen()
