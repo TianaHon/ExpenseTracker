@@ -66,9 +66,20 @@ def calculate_total_expenses(expenses):
     return total
 
 
-# Display expenses (category, amount, date) 
-def display_expenses(total):
-    print("Total expenses:",total) # print total expenses
+# View expenses (category, amount, date) 
+def view_expenses(total):
+    if expenses == []:
+        print("No expenses recorded.")
+        return
+    print("\nExpense List:")
+    expenses.sort(key=lambda x: x["category"])  # Sort by category for grouping
+    current_category = None # initialize current category to None
+    for expense in expenses:
+        if expense["category"] != current_category: # if category is different from current category
+            current_category = expense["category"] # update current category
+            print(f"\nCategory: {current_category.capitalize()}") # print category name with first letter capitalized
+        print(f"Date: {expense['date']}, Amount: {expense['amount']}")
+    
 
 # deletes expenses from list
 def delete_expense(expenses):
@@ -117,7 +128,7 @@ def main():
     if action == "c":
         expenses = load_expenses()  # Load expenses before calculation
         total = calculate_total_expenses(expenses)
-        display_expenses(total)
+        print("Total expenses: ${:.2f}".format(total))
         clear_screen()
     if action == "d":
         expenses = load_expenses()
